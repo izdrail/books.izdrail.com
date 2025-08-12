@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  book.izdrail.com:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        WWWUSER: '${WWWUSER:-1000}'
+        WWWGROUP: '${WWWGROUP:-1001}'
+    image: izdrail/book.izdrail.com
+    container_name: book.izdrail.com
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    ports:
+      - '1602:1602'
+      - '1603:1603'
+    environment:
+      WWWUSER: '${WWWUSER}'
+      WWWGROUP: '${WWWGROUP}'
+    volumes:
+      - '.:/app'
+    networks:
+      - sail
+
+
+networks:
+  sail:
+    driver: bridge

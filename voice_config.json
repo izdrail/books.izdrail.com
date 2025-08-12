@@ -1,0 +1,15 @@
+{
+  "standard": {
+    "name": "Standard Voice",
+    "description": "Default synthetic voice",
+    "type": "standard",
+    "enabled": true
+  },
+  "stefan": {
+    "name": "Stefan",
+    "description": "Custom uploaded voice",
+    "type": "cloned",
+    "enabled": true,
+    "created_at": "2025-08-12T07:21:49.546935"
+  }
+}
